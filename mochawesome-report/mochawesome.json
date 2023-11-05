@@ -1,0 +1,162 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 3,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-11-05T23:01:07.433Z",
+    "end": "2023-11-05T23:01:39.245Z",
+    "duration": 31812,
+    "testsRegistered": 4,
+    "passPercent": 75,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2e3d8fb6-822d-45f0-9e66-950e379095fc",
+      "title": "",
+      "fullFile": "cypress/e2e/mohirdev.cy.js",
+      "file": "cypress/e2e/mohirdev.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7f788e4f-bcbc-4fab-a122-3c66c0d6c5ef",
+          "title": "Registrtaion",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Registration with correct data",
+              "fullTitle": "Registrtaion Registration with correct data",
+              "timedOut": null,
+              "duration": 11239,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const registr = new _registration.default();\ncy.viewport(1920, 1080);\nregistr.visit();\nregistr.loginbtn().click();\nregistr.regbtn().click();\nregistr.namefld().type(\"Muhammad\");\nregistr.surnamefld().type(\"Saidmalikov\");\nregistr.telfld().type(\"94 \" + randomInteger(100, 999) + \" 00 00\");\nregistr.passfld().type(\"muhammad1911\");\nregistr.confirmbtn().click();\nregistr.codefld().type(\"123456\");\nregistr.confirmbtn().click();",
+              "err": {},
+              "uuid": "ec978068-18e6-4065-9b51-f6dc6cf0d377",
+              "parentUUID": "7f788e4f-bcbc-4fab-a122-3c66c0d6c5ef",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Registration with incorrect data",
+              "fullTitle": "Registrtaion Registration with incorrect data",
+              "timedOut": null,
+              "duration": 5715,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const registr = new _registration.default();\ncy.viewport(1920, 1080);\nregistr.visit();\nregistr.loginbtn().click();\nregistr.regbtn().click();\nregistr.namefld().type(\"123456\");\nregistr.surnamefld().type(\"123456\");\nregistr.telfld().type(\"negative\");\nregistr.passfld().type(\"fail\");\nregistr.confirmbtn().should(\"be.disabled\");\nregistr.errpass().should(\"be.visible\");",
+              "err": {},
+              "uuid": "de4ec621-e0eb-4e2b-be4a-650c86a1b060",
+              "parentUUID": "7f788e4f-bcbc-4fab-a122-3c66c0d6c5ef",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Registration with incorrect sms code",
+              "fullTitle": "Registrtaion Registration with incorrect sms code",
+              "timedOut": null,
+              "duration": 7888,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const registr = new _registration.default();\ncy.viewport(1920, 1080);\nregistr.visit();\nregistr.loginbtn().click();\nregistr.regbtn().click();\nregistr.namefld().type(\"Muhammad\");\nregistr.surnamefld().type(\"Saidmalikov\");\nregistr.telfld().type(\"94 \" + randomInteger(100, 999) + \" 00 00\");\nregistr.passfld().type(\"muhammad1911\");\nregistr.confirmbtn().click();\nregistr.codefld().type(\"123456\");\nregistr.confirmbtn().click();\nregistr.errsms().should(\"be.visible\");",
+              "err": {
+                "message": "Error: The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.\n\n  > Request failed with status code 400\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application",
+                "estack": "Error: The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.\n\n  > Request failed with status code 400\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n    at createError (https://praktikum.mohirdev.uz/assets/index-61ce7114.js:411:113010)\n    at settle (https://praktikum.mohirdev.uz/assets/index-61ce7114.js:411:113306)\n    at XMLHttpRequest.Bt (https://praktikum.mohirdev.uz/assets/index-61ce7114.js:412:2548)",
+                "diff": null
+              },
+              "uuid": "df1e02f9-91a8-4a89-b540-9f971c6be8ad",
+              "parentUUID": "7f788e4f-bcbc-4fab-a122-3c66c0d6c5ef",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Registration with empty data",
+              "fullTitle": "Registrtaion Registration with empty data",
+              "timedOut": null,
+              "duration": 5008,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const registr = new _registration.default();\ncy.viewport(1920, 1080);\nregistr.visit();\nregistr.loginbtn().click();\nregistr.regbtn().click();\nCypress.on('uncaught:exception', (err, runnable) => {\n  if (err.message.includes(\"A text for parsing must be a string\")) {\n    return false;\n  }\n  return true;\n});\nregistr.namefld().type(\"         \");\nregistr.surnamefld().type(\"         \");\nregistr.telfld().type(\"         \");\nregistr.passfld().type(\"         \");\nregistr.confirmbtn().click();",
+              "err": {},
+              "uuid": "9430ab85-fddb-433b-acc3-c26711585d94",
+              "parentUUID": "7f788e4f-bcbc-4fab-a122-3c66c0d6c5ef",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ec978068-18e6-4065-9b51-f6dc6cf0d377",
+            "de4ec621-e0eb-4e2b-be4a-650c86a1b060",
+            "9430ab85-fddb-433b-acc3-c26711585d94"
+          ],
+          "failures": [
+            "df1e02f9-91a8-4a89-b540-9f971c6be8ad"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 29850,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
